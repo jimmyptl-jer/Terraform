@@ -27,13 +27,12 @@ output "instance_id" {
   description = "The ID of the EC2 instance"
   value       = module.ec2.instance_id
 }
-
 output "instance_public_ip" {
   description = "The public IP address of the EC2 instance"
-  value       = module.ec2.public_ip
+  value       = module.ec2.instance_public_ip
 }
 
 output "instance_private_ip" {
   description = "The private IP address of the EC2 instance"
-  value       = module.ec2.private_ip
+  value       = module.ec2.instance_private_ip
 }

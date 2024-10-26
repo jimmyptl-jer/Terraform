@@ -22,6 +22,9 @@ resource "aws_instance" "example" {
   vpc_security_group_ids = [var.security_group_id]
 
   tags = {
-    Name = var.instance_name
+    Name        = var.instance_name
+    "Service"   = var.service_name
+    "AppTeam"   = var.app_team
+    "CreatedBy" = var.createdby
   }
 }

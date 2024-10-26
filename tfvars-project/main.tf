@@ -4,6 +4,12 @@ locals {
   instance_name = "WebServer-${var.environment}"
 }
 
+locals {
+  service_name = "Automation"
+  app_team     = "Cloud Team"
+  createdby    = "terraform"
+}
+
 module "vpc" {
   source               = "./modules/vpc"
   vpc_cidr             = var.vpc_cidr
@@ -27,4 +33,8 @@ module "ec2" {
   subnet_id         = module.vpc.public_subnet_ids[0]
   security_group_id = module.security_groups.security_group_id
   instance_name     = local.instance_name
+  service_name      = local.service_name
+  app_team          = local.app_team
+  createdby         = local.createdby
+
 }
